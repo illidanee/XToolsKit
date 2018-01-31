@@ -3,19 +3,23 @@
 
 #include <FreeImage.h>
 
-int XFileManager::Init()
+int XFileManager::XInit()
 {
+#ifdef FREEIMAGE_LIB
 	FreeImage_Initialise();
+#endif
 	return 0;
 }
 
-int XFileManager::Done()
+int XFileManager::XDone()
 {
+#ifdef FREEIMAGE_LIB
 	FreeImage_DeInitialise();
+#endif
 	return 0;
 }
 
-int XFileManager::LoadImage(unsigned char*& pBuffer, int& w, int& h, const char* pFile)
+int XFileManager::XLoadImage(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
 {
 	FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 
@@ -48,5 +52,103 @@ int XFileManager::LoadImage(unsigned char*& pBuffer, int& w, int& h, const char*
 
 	FreeImage_Unload(dib);
 
+	return 0;
+}
+
+int XFileManager::XSaveImage(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
+{
+	FIBITMAP* dib = FreeImage_Allocate(w, h, 32);
+	unsigned char* pPixel = FreeImage_GetBits(dib);
+	size_t size = w * h;
+	for (unsigned int i = 0; i < size; ++i)
+	{
+		pPixel[i * 4 + 0] = pBuffer[i * 4 + 0];
+		pPixel[i * 4 + 1] = pBuffer[i * 4 + 1];
+		pPixel[i * 4 + 2] = pBuffer[i * 4 + 2];
+		pPixel[i * 4 + 3] = pBuffer[i * 4 + 3];
+	}
+	FreeImage_Save(FIF_PNG, dib, pFile, PNG_DEFAULT);
+	FreeImage_Unload(dib);
+
+	return 0;
+}
+
+int XFileManager::XSaveImageRed(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
+{
+	FIBITMAP* dib = FreeImage_Allocate(w, h, 32);
+	unsigned char* pPixel = FreeImage_GetBits(dib);
+	size_t size = w * h;
+	for (unsigned int i = 0; i < size; ++i)
+	{
+		pPixel[i * 4 + 0] = pBuffer[i];
+		pPixel[i * 4 + 1] = 0;
+		pPixel[i * 4 + 2] = 0;
+		pPixel[i * 4 + 3] = 255;
+	}
+	FreeImage_Save(FIF_PNG, dib, pFile, PNG_DEFAULT);
+	FreeImage_Unload(dib);
+
+	return 0;
+}
+
+int XFileManager::XSaveImageGreen(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
+{
+	FIBITMAP* dib = FreeImage_Allocate(w, h, 32);
+	unsigned char* pPixel = FreeImage_GetBits(dib);
+	size_t size = w * h;
+	for (unsigned int i = 0; i < size; ++i)
+	{
+		pPixel[i * 4 + 0] = 0;
+		pPixel[i * 4 + 1] = pBuffer[i];
+		pPixel[i * 4 + 2] = 0;
+		pPixel[i * 4 + 3] = 255;
+	}
+	FreeImage_Save(FIF_PNG, dib, pFile, PNG_DEFAULT);
+	FreeImage_Unload(dib);
+
+	return 0;
+}
+
+int XFileManager::XSaveImageBlue(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
+{
+	FIBITMAP* dib = FreeImage_Allocate(w, h, 32);
+	unsigned char* pPixel = FreeImage_GetBits(dib);
+	size_t size = w * h;
+	for (unsigned int i = 0; i < size; ++i)
+	{
+		pPixel[i * 4 + 0] = 0;
+		pPixel[i * 4 + 1] = 0;
+		pPixel[i * 4 + 2] = pBuffer[i];
+		pPixel[i * 4 + 3] = 255;
+	}
+	FreeImage_Save(FIF_PNG, dib, pFile, PNG_DEFAULT);
+	FreeImage_Unload(dib);
+
+	return 0;
+}
+
+int XFileManager::XSaveImageAlpha(XOUT unsigned char*& pBuffer, XOUT int& w, XOUT int& h, XIN const char* pFile)
+{
+	FIBITMAP* dib = FreeImage_Allocate(w, h, 32);
+	unsigned char* pPixel = FreeImage_GetBits(dib);
+	size_t size = w * h;
+	for (unsigned int i = 0; i < size; ++i)
+	{
+		pPixel[i * 4 + 0] = 0;
+		pPixel[i * 4 + 1] = 0;
+		pPixel[i * 4 + 2] = 0;
+		pPixel[i * 4 + 3] = pBuffer[i];
+	}
+	FreeImage_Save(FIF_PNG, dib, pFile, PNG_DEFAULT);
+	FreeImage_Unload(dib);
+
+	return 0;
+}
+
+int XFileManager::XFreeBuffer(XIN unsigned char*& pBuffer)
+{
+	delete[] pBuffer;
+	pBuffer = NULL;
+	
 	return 0;
 }
