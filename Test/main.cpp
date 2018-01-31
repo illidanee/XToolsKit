@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "../XFileManager/XFileManager.h"
-#pragma comment(lib, "../bin/Debug/x64/XFileManager.lib")
+#pragma comment(lib, "../bin/Release/x64/XFileManager.lib")
 
 int main()
 {

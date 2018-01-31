@@ -72,28 +72,28 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>../ThirdLib/FreeImage/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>../ThirdLib/FreeImage/lib/;$(LibraryPath)</LibraryPath>
+    <LibraryPath>../ThirdLib/FreeImage/lib/debug/;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)/bin/$(Configuration)/$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/temp/$(Configuration)/$(Platform)/$(ProjectName)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>../ThirdLib/FreeImage/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>../ThirdLib/FreeImage/lib/;$(LibraryPath)</LibraryPath>
+    <LibraryPath>../ThirdLib/FreeImage/lib/debug/;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)/bin/$(Configuration)/$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/temp/$(Configuration)/$(Platform)/$(ProjectName)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>../ThirdLib/FreeImage/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>../ThirdLib/FreeImage/lib/;$(LibraryPath)</LibraryPath>
+    <LibraryPath>../ThirdLib/FreeImage/lib/release/;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)/bin/$(Configuration)/$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/temp/$(Configuration)/$(Platform)/$(ProjectName)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>../ThirdLib/FreeImage/include/;$(IncludePath)</IncludePath>
-    <LibraryPath>../ThirdLib/FreeImage/lib/;$(LibraryPath)</LibraryPath>
+    <LibraryPath>../ThirdLib/FreeImage/lib/release/;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)/bin/$(Configuration)/$(Platform)/</OutDir>
     <IntDir>$(SolutionDir)/temp/$(Configuration)/$(Platform)/$(ProjectName)/</IntDir>
   </PropertyGroup>
@@ -109,7 +109,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImaged.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,7 +124,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImaged.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
