@@ -1,6 +1,7 @@
 #define EXPORT_XAPI
 #include "XFileManager.h"
 
+//#define FREEIMAGE_LIB
 #include <FreeImage.h>
 
 int XFileManager::XInit()
