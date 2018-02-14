@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XFileManager", "XFileManager\XFileManager.vcxproj", "{12FE85F5-7EBF-48DE-A48F-6E3EC4C382C6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XTimeManager", "XTimeManager\XTimeManager.vcxproj", "{3BA0972A-9285-4C0F-9B81-B5C50F630974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{12FE85F5-7EBF-48DE-A48F-6E3EC4C382C6}.Release|x64.Build.0 = Release|x64
 		{12FE85F5-7EBF-48DE-A48F-6E3EC4C382C6}.Release|x86.ActiveCfg = Release|Win32
 		{12FE85F5-7EBF-48DE-A48F-6E3EC4C382C6}.Release|x86.Build.0 = Release|Win32
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Debug|x64.ActiveCfg = Debug|x64
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Debug|x64.Build.0 = Debug|x64
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Debug|x86.ActiveCfg = Debug|Win32
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Debug|x86.Build.0 = Debug|Win32
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Release|x64.ActiveCfg = Release|x64
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Release|x64.Build.0 = Release|x64
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Release|x86.ActiveCfg = Release|Win32
+		{3BA0972A-9285-4C0F-9B81-B5C50F630974}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
